@@ -1,0 +1,37 @@
+Genetic Algorithm pseudocode
+
+GA():
+    createPopulation()
+    for i in generations:
+        evaluateFitness()
+        sort()
+        crossParents()
+    evaluateFitness()
+    sort()
+    pickBestPath()
+    visualizePath()
+
+evaluateFitness():
+    for chromosome in chromosomes:
+        assign points and time from simulation result to chromosome
+
+sort():
+    sort chromosomes by highest points
+
+crossParents():
+    newPopulation = []
+    append best path to newPopulation
+    for i in population[::2]:
+        partition chromosomes[i] and chromosomes[i+1] into desired chunks
+        swap everyother chunk between the lists
+        append both flattened lists to newPopulation
+    chromosomes = newPopulation
+
+visualizePath():
+    run simulation with best path
+
+createPopulation():
+    chromosomes = []
+    for I in population:
+        for i in listLength:
+            append random direction to chromosomes[I]
